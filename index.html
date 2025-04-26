@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- SETUP BOOTSTAP: link to Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+	<!-- link to JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">	
+	<title>BMI Calculator</title>
+</head>
+<body>
+
+	<div class="container mb-5 mt-5 pb-2 pt-2">
+		<div class="container2 mt-1 mb-1 pt-5 pb-5">
+
+		<div class="row">
+
+			<div class="col-md-5">
+				
+	<table class="table table-striped">
+		<tr>
+			<td>Classification</td>
+			<td>Range</td>
+		</tr>
+
+		<tr>
+			<td>Severe Thinness</td>
+			<td>< 16</td>
+		</tr>
+		
+		<tr>
+			<td>Moderate Thinness</td>
+			<td>16 - 18.5</td>
+		</tr>
+
+		<tr>
+			<td>Average</td>
+			<td>18.5-25</td>
+		</tr>
+
+		<tr>
+			<td>Overweight</td>
+			<td>25-30</td>
+		</tr>
+
+		<tr>
+			<td>Obese Class I</td>
+			<td>30-35</td>
+		</tr>
+
+		<tr>
+			<td>Obese Class II</td>
+			<td>35-40</td>
+		</tr>
+
+		<tr>
+			<td>Obese Class III</td>
+			<td>> 40</td>
+		</tr>
+
+	</table>
+			</div>
+
+			<div class="col-md-7">
+				<h1>Lets Calculate Your BMI! ⋆｡‧˚ʚ🍓ɞ˚‧｡⋆</h1>
+				<p>The Body Mass Index, also known as BMI, is the standardized way of knowing ones weight classification and status with the help of their height and weight. Though you can calculate your BMI using centimeters, feet, or pounds, this website utilizes kilograms and meters. </p>
+
+				 <div class="row">
+        <div class="col-sm-6">
+          <form>
+            <div class="heavy" > <!--div for name-->
+                <label for="inputName">Kilograms</label>
+                <input type="text" class="form-control" id="kilo" placeholder="Please enter your weight in meters here.">
+            </div>
+            
+            <div class="tall" > <!--div for email-->
+                <label for="inputEmail">Meters</label>
+                <input type="email" class="form-control" id="meter" placeholder="Please enter your height in meters here.">
+            </div>
+       
+        </div>
+
+        <br>
+
+
+			</div>
+			<br>
+
+			<div class="row align-items-center g-3">
+				<div class="col-sm-6">
+				<button type="button" id="bmi01" onclick="checkurBMI()">CALCULATE</button>
+
+			</div>
+			<div class="col-sm-6">
+				<p id=bmi> your bmi is ...</p>
+			</div>
+			</div>
+				
+
+		</div>
+
+	</div class="container2">
+		
+	</div>
+
+	<script type="text/javascript">
+
+		function checkurBMI(){
+			var z = document.getElementById("meter").value;
+			var y = document.getElementById("kilo").value;
+			var inputMeter = document.getElementById('meter').innerHTML = Math.pow(z, 2);
+			var result = document.getElementById('bmi').innerHTML = (y/inputMeter);
+			var ohhyess = document.getElementById('bmi').innerHTML = Math.round(result);
+
+
+			if(ohhyess<=16){
+				window.alert('Severe Thinness, underweight: ohh noo dude your bmi is quite low for your perscribed weight and height...');
+			}
+
+			else if(ohhyess>=17 && ohhyess<=18){
+				window.alert('Moderately Thin: ohnoez It is suggested that you maintain a healthy diet however to avoid having a lower classification.');
+			}
+
+			else if(ohhyess>=19 && ohhyess<=25){
+				window.alert('Average: woah youre actually okay woaaahhh slayed ate devoured!! stay healthy queen');
+			}
+
+			else if(ohhyess>=24 && ohhyess<=30){
+				window.alert('Overweight: its okay boss we got this!! Just try to manage the diet a bit more just incase, we dont want any health problems!');
+			}
+
+			else if(ohhyess>=31 && ohhyess<=35){
+				window.alert('Obese Class I: ITS OKAY CHAT WE ARE ON THE GRIND just try to stay healthy');
+			}
+
+			else if(ohhyess>=36 && ohhyess<=40){
+				window.alert('Obese Class II: oh no! its okay! lets try to gain a healthier lifestyle to avoid health complications!');
+			}
+
+			else if(ohhyess>=41){
+				window.alert("Obese Class III: Niko...vado... avocado...?");
+			}
+
+			else{
+				window.alert("invalid!");
+			}
+
+
+		}
+
+
+		
+	</script>
+
+
+
+</body>
+</html>
